@@ -1,0 +1,23 @@
+{
+    "name": "consoledo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "Node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CristianAntonioAraya/ConsoleDo.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CristianAntonioAraya/ConsoleDo/issues"
+    },
+    "homepage": "https://github.com/CristianAntonioAraya/ConsoleDo#readme",
+    "dependencies": {
+        "colors": "^1.4.0"
+    }
+}
