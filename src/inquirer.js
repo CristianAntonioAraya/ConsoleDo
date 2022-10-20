@@ -35,4 +35,64 @@ const readInput = async (message) => {
     return msg;
 };
 
-export { inquirerMenu, PauseMenu, readInput };
+const showDeleteMenu = async (tasks) => {
+    const choices = tasks.map((task, index) => {
+        const id = `${index + 1}.`.green;
+
+        return {
+            value: task.id,
+            name: `${id} ${task.desc}`,
+        };
+    });
+
+    choices.unshift({ value: '0', name: '0.'.green + 'Cancel' });
+
+    const question = {
+        type: 'list',
+        name: 'id',
+        message: 'Delete',
+        choices,
+    };
+    const { id } = await inquirer.prompt(question);
+    return id;
+};
+
+const showChecklist = async (tasks) => {
+    const choices = tasks.map((task, index) => {
+        const id = `${index + 1}.`.green;
+
+        return {
+            value: task.id,
+            name: `${id} ${task.desc}`,
+            checked: task.completedIn ? true : false,
+        };
+    });
+
+    const question = {
+        type: 'checkbox',
+        name: 'ids',
+        message: 'Select',
+        choices,
+    };
+    const { ids } = await inquirer.prompt(question);
+    return ids;
+};
+
+const confirmQuestion = async (message) => {
+    const question = {
+        type: 'confirm',
+        name: 'ok',
+        message,
+    };
+    const { ok } = await inquirer.prompt(question);
+    return ok;
+};
+
+export {
+    inquirerMenu,
+    PauseMenu,
+    readInput,
+    showDeleteMenu,
+    confirmQuestion,
+    showChecklist,
+};

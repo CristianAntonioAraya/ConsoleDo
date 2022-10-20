@@ -46,4 +46,6 @@ const pauseQuestion = [
     },
 ];
 
-export { MenuQuestions, pauseQuestion };
+
+
+export { MenuQuestions, pauseQuestion  };
